@@ -1,0 +1,22 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app
+        - Modules
+        - routes
+        - resources
+        - tests
+
+    # The level 7 is the highest level
+    level: 7
+
+    ignoreErrors:
+        
+
+    excludes_analyse:
+        - ./*/*/FileToBeExcluded.php
+
+    polluteCatchScopeWithTryAssignments: true     
