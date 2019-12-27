@@ -41,4 +41,12 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The roles that belong to the admin.
+     */
+    public function roles()
+    {
+        return $this->hasMany('Modules\Admin\Entities\Role')->using('Modules\Admin\Entities\Pivots\RoleUser');
+    }
 }
