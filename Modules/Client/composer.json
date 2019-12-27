@@ -1,5 +1,5 @@
 {
-    "name": "nwidart/api",
+    "name": "nwidart/client",
     "description": "",
     "authors": [
         {
@@ -10,7 +10,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\Api\\Providers\\ApiServiceProvider"
+                "Modules\\Client\\Providers\\ClientServiceProvider"
             ],
             "aliases": {
 
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Api\\": ""
+            "Modules\\Client\\": ""
         }
     }
 }

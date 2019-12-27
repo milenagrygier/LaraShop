@@ -1,11 +1,11 @@
 {
-    "name": "Api",
-    "alias": "api",
+    "name": "Client",
+    "alias": "client",
     "description": "",
     "keywords": [],
     "order": 0,
     "providers": [
-        "Modules\\Api\\Providers\\ApiServiceProvider"
+        "Modules\\Client\\Providers\\ClientServiceProvider"
     ],
     "aliases": {},
     "files": [],

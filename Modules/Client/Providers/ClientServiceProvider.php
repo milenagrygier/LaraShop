@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Api\Providers;
+namespace Modules\Client\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
-class ApiServiceProvider extends ServiceProvider
+class ClientServiceProvider extends ServiceProvider
 {
     /**
      * Boot the application events.
@@ -18,7 +18,7 @@ class ApiServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->registerFactories();
-        $this->loadMigrationsFrom(module_path('Api', 'Database/Migrations'));
+        $this->loadMigrationsFrom(module_path('Client', 'Database/Migrations'));
     }
 
     /**
@@ -39,10 +39,10 @@ class ApiServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            module_path('Api', 'Config/config.php') => config_path('api.php'),
+            module_path('Client', 'Config/config.php') => config_path('client.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            module_path('Api', 'Config/config.php'), 'api'
+            module_path('Client', 'Config/config.php'), 'client'
         );
     }
 
@@ -53,17 +53,17 @@ class ApiServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $viewPath = resource_path('views/modules/api');
+        $viewPath = resource_path('views/modules/client');
 
-        $sourcePath = module_path('Api', 'Resources/views');
+        $sourcePath = module_path('Client', 'Resources/views');
 
         $this->publishes([
             $sourcePath => $viewPath
         ],'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/modules/api';
-        }, \Config::get('view.paths')), [$sourcePath]), 'api');
+            return $path . '/modules/client';
+        }, \Config::get('view.paths')), [$sourcePath]), 'client');
     }
 
     /**
@@ -73,12 +73,12 @@ class ApiServiceProvider extends ServiceProvider
      */
     public function registerTranslations()
     {
-        $langPath = resource_path('lang/modules/api');
+        $langPath = resource_path('lang/modules/client');
 
         if (is_dir($langPath)) {
-            $this->loadTranslationsFrom($langPath, 'api');
+            $this->loadTranslationsFrom($langPath, 'client');
         } else {
-            $this->loadTranslationsFrom(module_path('Api', 'Resources/lang'), 'api');
+            $this->loadTranslationsFrom(module_path('Client', 'Resources/lang'), 'client');
         }
     }
 
@@ -90,7 +90,7 @@ class ApiServiceProvider extends ServiceProvider
     public function registerFactories()
     {
         if (! app()->environment('production') && $this->app->runningInConsole()) {
-            app(Factory::class)->load(module_path('Api', 'Database/factories'));
+            app(Factory::class)->load(module_path('Client', 'Database/factories'));
         }
     }
 
