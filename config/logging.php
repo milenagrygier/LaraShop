@@ -103,6 +103,8 @@ return [
         'mysql' => [
             'driver' => 'monolog',
             'via' => \Modules\Logs\Services\MySqlLogMonolog::class,
+            'handler' => \Modules\Logs\Handlers\MySqlLogHandler::class,
+            'formatter' => \Modules\Logs\Services\FormatMySqlLogs::class,
             'name' => 'mysqllogger'
         ],
     ],

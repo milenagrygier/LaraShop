@@ -17,7 +17,13 @@ class CreateLogsTable extends Migration
             $table->bigIncrements('id');
             $table->string('instance')->index();
             $table->string('channel')->index();
-            $table->string('level');
+            $table->string('file')->nullable();
+            $table->integer('line')->nullable();
+            $table->string('exception_class')->nullable();
+            $table->ipAddress('ip');
+            $table->string('user_agent', 200)->nullable();
+            $table->integer('level');
+            $table->string('level_name', 10);
             $table->text('message');
             $table->longText('context');
             $table->timestamps();
