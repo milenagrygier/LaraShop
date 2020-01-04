@@ -2,7 +2,7 @@
 
 namespace Modules\Basket\Repositories;
 
-use Modules\Entities\Pivots\BasketProducts;
+use Modules\Basket\Entities\Pivots\BasketProducts;
 
 class BasketRepository implements BasketRepositoryInterface
 {
@@ -11,7 +11,7 @@ class BasketRepository implements BasketRepositoryInterface
         return BasketProducts::create($data);
     }
 
-    public function removeItem(integer $id): boolean
+    public function removeItem(integer $id): bool
     {
         return BasketProducts::find($id)->delete();
     }
