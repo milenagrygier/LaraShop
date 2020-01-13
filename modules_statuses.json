@@ -1,5 +1,6 @@
 {
     "Admin": true,
     "Client": true,
-    "Logs": true
+    "Logs": true,
+    "Encrypter": true
 }

@@ -1,0 +1,13 @@
+{
+    "name": "Encrypter",
+    "alias": "encrypter",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Encrypter\\Providers\\EncrypterServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
