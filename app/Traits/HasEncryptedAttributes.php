@@ -1,9 +1,8 @@
 <?php
 
-namespace Modules\Encrypter\Traits;
+namespace App\Traits;
 
-use Modules\Encrypter\Services\Decrypter;
-use Modules\Encrypter\Services\Encrypter;
+use Illuminate\Support\Facades\Crypt;
 
 trait HasEncryptedAttributes
 {
@@ -12,16 +11,16 @@ trait HasEncryptedAttributes
       $value = parent::getAttribute($key);
       if (in_array($key, $this->encrypted) && isset($value))
       {
-          $value = Decrypter::decrypt($value);
+          $value = Crypt::decrypt($value);
       }
       return $value;
     }
 
     public function setAttribute($key, $value)
     {
-      if (in_array($key, $this->encrypted))
+      if (in_array($key, $this->encrypt))
       {
-          $value = Encrypter::encrypt($value);
+          $value = Crypt::encrypt($value);
       }
       return parent::setAttribute($key, $value);
     }
