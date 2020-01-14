@@ -4,12 +4,12 @@ namespace App\Traits;
 
 use Illuminate\Support\Facades\Crypt;
 
-trait HasEncryptedAttributes
+trait HasEncryptableAttributes
 {
     public function getAttribute($key)
     {
       $value = parent::getAttribute($key);
-      if (in_array($key, $this->encrypted) && isset($value))
+      if (in_array($key, $this->encryptable) && isset($value))
       {
           $value = Crypt::decrypt($value);
       }
@@ -18,7 +18,7 @@ trait HasEncryptedAttributes
 
     public function setAttribute($key, $value)
     {
-      if (in_array($key, $this->encrypt))
+      if (in_array($key, $this->encryptable))
       {
           $value = Crypt::encrypt($value);
       }
