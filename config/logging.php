@@ -37,7 +37,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['mysql'],
             'ignore_exceptions' => false,
         ],
 
@@ -98,6 +98,14 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+        ],
+
+        'mysql' => [
+            'driver' => 'monolog',
+            'via' => \Modules\Logs\Services\MySqlLogMonolog::class,
+            'handler' => \Modules\Logs\Handlers\MySqlLogHandler::class,
+            'formatter' => \Modules\Logs\Services\FormatMySqlLogs::class,
+            'name' => 'mysqllogger'
         ],
     ],
 
