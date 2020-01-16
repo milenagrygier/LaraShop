@@ -1,0 +1,13 @@
+<?php
+
+namespace Modules\Logs\Repositories\Interfaces;
+
+use Illuminate\Database\Eloquent\Builder;
+use Modules\Logs\Entities\Log;
+
+interface LogRepositoryInterface
+{
+    public function find(int $id);
+
+    public function getDataTableBuilder(): Builder;
+}
