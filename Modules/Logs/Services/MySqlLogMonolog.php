@@ -4,7 +4,6 @@ namespace Modules\Logs\Services;
 
 use Monolog\Logger;
 use Modules\Logs\Handlers\MySqlLogHandler;
-use Modules\Logs\Services\MySqlLogProcessor;
 
 class MySqlLogMonolog
 {
