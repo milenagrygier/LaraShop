@@ -19,6 +19,5 @@ class MySqlLogMonolog
     {
         $logger = new Logger('monolog');
         $logger->pushHandler(new MySqlLogHandler());
-        $logger->pushProcessor(new MySqlLogProcessor());
     }
 }
