@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Builder;
 
 class LogRepository implements LogRepositoryInterface
 {
-    public function find(int $id)
+    public function find(int $id): ?Log
     {
-        return Log::find($id);
+        return Log::where('id', $id)->first();
     }
 
     public function getDataTableBuilder(): Builder

@@ -7,7 +7,7 @@ use Modules\Logs\Entities\Log;
 
 interface LogRepositoryInterface
 {
-    public function find(int $id);
+    public function find(int $id): ?Log;
 
     public function getDataTableBuilder(): Builder;
 }
