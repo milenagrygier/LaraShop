@@ -4,7 +4,7 @@ namespace Modules\Admin\Repositories;
 
 use Modules\Admin\Entities\Admin;
 use Illuminate\Database\Query\Builder;
-use Modules\Admin\Repositories\AdminRepositoryInterface;
+use Modules\Admin\Repositories\Interfaces\AdminRepositoryInterface;
 
 class AdminRepository implements AdminRepositoryInterface
 {
@@ -13,12 +13,12 @@ class AdminRepository implements AdminRepositoryInterface
         return Admin::create($data);
     }
 
-    public function update(array $data, integer $id): bool
+    public function update(array $data, int $id): bool
     {
         return Admin::find($id)->update($data);
     }
-    
-    public function delete(integer $id): bool
+
+    public function delete(int $id): bool
     {
         return Admin::find($id)->delete();
     }
