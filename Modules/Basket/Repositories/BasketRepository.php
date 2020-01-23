@@ -3,6 +3,7 @@
 namespace Modules\Basket\Repositories;
 
 use Modules\Basket\Entities\Pivots\BasketProducts;
+use Modules\Basket\Repositories\Interfaces\BasketRepositoryInterface;
 
 class BasketRepository implements BasketRepositoryInterface
 {
