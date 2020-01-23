@@ -2,5 +2,6 @@
     "Admin": true,
     "Client": true,
     "Logs": true,
+    "Basket": true,
     "Product": true
 }
