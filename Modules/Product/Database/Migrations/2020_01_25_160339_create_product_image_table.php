@@ -15,8 +15,11 @@ class CreateProductImageTable extends Migration
     {
         Schema::create('product_image', function (Blueprint $table) {
             $table->integer('product_id')->unsigned()->index();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->integer('image_id')->unsigned()->index();
+        });
+
+        Schema::table('product_image', function($table) {
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
             $table->primary(['product_id', 'image_id']);
         });
