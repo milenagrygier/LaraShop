@@ -14,10 +14,14 @@ class CreateBasketProductsTable extends Migration
     public function up()
     {
         Schema::create('basket_products', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('client_id')->index();
-            $table->integer('product_id')->index();
-            $table->timestamps();
+            $table->integer('basket_id')->unsigned()->index();
+            $table->integer('product_id')->unsigned()->index();
+        });
+
+        Schema::table('basket_products', function($table) {
+            $table->foreign('basket_id')->references('id')->on('baskets')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->primary(['basket_id', 'product_id']);
         });
     }
 
