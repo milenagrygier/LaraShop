@@ -5,6 +5,7 @@ namespace Modules\Product\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Product\Entities\Pivots\ProductImage;
 use Modules\Image\Entities\Image;
+use Modules\Product\Entities\Price;
 
 class Product extends Model
 {
@@ -18,5 +19,10 @@ class Product extends Model
     public function images()
     {
         return $this->hasMany(Image::class)->using(ProductImage::class);
+    }
+
+    public function prices()
+    {
+        return $this->hasMany(Price::class);
     }
 }
