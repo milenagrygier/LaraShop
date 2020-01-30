@@ -7,6 +7,8 @@ use Modules\Admin\Repositories\AdminRepository;
 use Modules\Admin\Repositories\Interfaces\AdminRepositoryInterface;
 use Modules\Admin\Repositories\RoleRepository;
 use Modules\Admin\Repositories\Interfaces\RoleRepositoryInterface;
+use Modules\Admin\Repositories\RoleAdminRepository;
+use Modules\Admin\Repositories\Interfaces\RoleAdminRepositoryInterface;
 
 class AdminRepositoryServiceProvider extends ServiceProvider
 {
@@ -25,6 +27,11 @@ class AdminRepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             RoleRepositoryInterface::class,
             RoleRepository::class
+        );
+
+        $this->app->bind(
+            RoleAdminRepositoryInterface::class,
+            RoleAdminRepository::class
         );
     }
 }
