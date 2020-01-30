@@ -2,10 +2,10 @@
 
 namespace Modules\Product\Repositories;
 
-use Modules\Product\Repositories\Interfaces\ProductRepositoryInterface;
+use Modules\Product\Repositories\Interfaces\PriceRepositoryInterface;
 use Modules\Product\Entities\Price;
 
-class ProductRepository implements ProductRepositoryInterface
+class PriceRepository implements PriceRepositoryInterface
 {
     public function find(int $id): ?Price
     {
