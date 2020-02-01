@@ -13,9 +13,11 @@
         "fideloper/proxy": "^4.0",
         "fzaninotto/faker": "^1.9",
         "intervention/image": "^2.5",
+        "laminas/laminas-diactoros": "^2.2",
         "laravel/framework": "^6.2",
         "laravel/passport": "^8.0",
         "laravel/tinker": "^2.0",
+        "laravel/ui": "^1.1",
         "nwidart/laravel-modules": "^6.2"
     },
     "require-dev": {
