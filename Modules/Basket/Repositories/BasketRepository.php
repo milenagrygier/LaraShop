@@ -12,7 +12,7 @@ class BasketRepository implements BasketRepositoryInterface
         return BasketProducts::create($data);
     }
 
-    public function removeItem(integer $id): bool
+    public function removeItem(int $id): bool
     {
         return BasketProducts::find($id)->delete();
     }
