@@ -13,12 +13,12 @@ class CreateBasketProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('basket_products', function (Blueprint $table) {
+        Schema::create('basket_product', function (Blueprint $table) {
             $table->integer('basket_id')->unsigned()->index();
             $table->integer('product_id')->unsigned()->index();
         });
 
-        Schema::table('basket_products', function($table) {
+        Schema::table('basket_product', function($table) {
             $table->foreign('basket_id')->references('id')->on('baskets')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->primary(['basket_id', 'product_id']);
@@ -32,6 +32,6 @@ class CreateBasketProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('basket_products');
+        Schema::dropIfExists('basket_product');
     }
 }
