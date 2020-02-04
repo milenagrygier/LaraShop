@@ -30,6 +30,11 @@ class OrderRepository implements OrderRepositoryInterface
         'orders.created_at', 'orders.updated_at');
     }
 
+    public function create(array $data): Order
+    {
+        return Order::create($data);
+    }
+
     public function update(array $data, int $id): bool
     {
         return Order::where('id', $id)->update($data);

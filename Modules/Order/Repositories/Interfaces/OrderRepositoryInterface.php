@@ -14,6 +14,8 @@ interface OrderRepositoryInterface
 
     public function getDataTableBuilder(): Builder;
 
+    public function create(array $data): Order;
+
     public function update(array $data, int $id): bool;
 
     public function delete(int $id): bool;
