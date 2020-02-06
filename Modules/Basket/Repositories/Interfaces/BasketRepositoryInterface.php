@@ -1,6 +1,7 @@
 <?php
 
 namespace Modules\Basket\Repositories\Interfaces;
+
 use Modules\Basket\Entities\Basket;
 
 interface BasketRepositoryInterface
