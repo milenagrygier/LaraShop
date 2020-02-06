@@ -5,16 +5,24 @@ namespace Modules\Admin\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use DataTables;
+use Modules\Admin\Repositories\Interfaces\AdminRepositoryInterface;
 
 class AdminController extends Controller
 {
+    protected $repository;
+
+    public function __construct(AdminRepositoryInterface $repository)
+    {
+        $this->repository = $repository;
+    }
     /**
      * Display a listing of the resource.
      * @return Response
      */
-    public function index()
+    public function datatable()
     {
-        return view('admin::index');
+        return DataTables::of($this->repository->getDataTableBuilder())->make(true);
     }
 
     /**

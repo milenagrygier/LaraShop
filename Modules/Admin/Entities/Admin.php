@@ -1,12 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Admin\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Carbon\Carbon;
 
+/**
+ * @property int $id
+ * @property string $username
+ * @property string $email
+ * @property Carbon $email_verified_at
+ * @property string $password
+ * @property string $remember_token
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ */
 class Admin extends Authenticatable
 {
     use Notifiable;
