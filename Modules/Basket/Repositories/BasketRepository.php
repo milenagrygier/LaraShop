@@ -2,18 +2,18 @@
 
 namespace Modules\Basket\Repositories;
 
-use Modules\Basket\Entities\Pivots\BasketProducts;
+use Modules\Basket\Entities\Basket;
 use Modules\Basket\Repositories\Interfaces\BasketRepositoryInterface;
 
 class BasketRepository implements BasketRepositoryInterface
 {
-    public function addItem(array $data): BasketProducts
+    public function create(array $data): Basket
     {
-        return BasketProducts::create($data);
+        return Basket::create($data);
     }
 
-    public function removeItem(int $id): bool
+    public function delete(int $id): bool
     {
-        return BasketProducts::find($id)->delete();
+        return Basket::find($id)->delete();
     }
 }

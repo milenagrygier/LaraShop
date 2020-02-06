@@ -1,12 +1,12 @@
 <?php
 
 namespace Modules\Basket\Repositories\Interfaces;
-use Modules\Basket\Entities\Pivots\BasketProducts;
+use Modules\Basket\Entities\Basket;
 
 interface BasketRepositoryInterface
 {
-    public function addItem(array $data): BasketProducts;
+    public function create(array $data): Basket;
 
-    public function removeItem(int $id): bool;
+    public function delete(int $id): bool;
 
 }
