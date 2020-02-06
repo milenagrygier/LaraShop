@@ -1,9 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Admin\Entities\Pivots;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
+/**
+ * @property int $admin_id
+ * @property int $role_id
+ */
 class RoleAdmin extends Pivot
 {
     /**
@@ -22,7 +28,7 @@ class RoleAdmin extends Pivot
      * @var bool
      */
     public $timestamps = false;
-       
+
     /**
     * Indicates if the IDs are auto-incrementing.
     *
