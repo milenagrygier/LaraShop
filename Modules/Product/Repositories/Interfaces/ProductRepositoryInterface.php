@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Product\Repositories\Interfaces;
 
 use Modules\Product\Entities\Product;
