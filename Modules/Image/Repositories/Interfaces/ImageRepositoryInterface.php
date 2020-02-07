@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Image\Repositories\Intefaces;
 
 use Modules\Image\Entities\Image;
