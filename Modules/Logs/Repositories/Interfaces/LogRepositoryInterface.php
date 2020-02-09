@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Logs\Repositories\Interfaces;
 
 use Illuminate\Database\Eloquent\Builder;
