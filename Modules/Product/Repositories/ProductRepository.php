@@ -17,7 +17,7 @@ class ProductRepository implements ProductRepositoryInterface
         return Product::find($id);
     }
 
-    public function all(int $per_page): AbstractPaginator
+    public function paginated(int $per_page): AbstractPaginator
     {
         return Product::paginate($per_page);
     }
