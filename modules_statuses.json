@@ -4,5 +4,6 @@
     "Logs": true,
     "Basket": true,
     "Product": true,
-    "Image": true
+    "Image": true,
+    "Order": true
 }
