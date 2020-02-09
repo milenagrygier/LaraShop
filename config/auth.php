@@ -43,7 +43,7 @@ return [
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'clients',
             'hash' => false,
         ],
     ],
@@ -71,10 +71,10 @@ return [
             'model' => Modules\Admin\Entities\Admin::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+         'clients' => [
+             'driver' => 'database',
+             'model' => Modules\Client\Entities\Client::class,
+         ],
     ],
 
     /*
