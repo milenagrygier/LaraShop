@@ -10,5 +10,5 @@ interface RoleAdminRepositoryInterface
 {
     public function create(array $data): RoleAdmin;
 
-    public function delete(int $id): bool;
+    public function delete(int $admin_id, int $role_id): bool;
 }
