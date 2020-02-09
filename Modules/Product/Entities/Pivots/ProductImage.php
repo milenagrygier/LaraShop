@@ -16,4 +16,14 @@ class ProductImage extends Pivot
         'product_id',
         'image_id'
     ];
+
+        /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'product_id' => 'int',
+        'image_id' => 'int',
+    ];
 }

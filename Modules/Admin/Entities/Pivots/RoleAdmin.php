@@ -23,6 +23,15 @@ class RoleAdmin extends Pivot
     ];
 
     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    public $casts = [
+        'admin_id' => 'int',
+        'role_id' => 'int',
+    ];
+    /**
      * Indicates if the model should be timestamped.
      *
      * @var bool

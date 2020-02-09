@@ -29,6 +29,22 @@ class Product extends Model
         'description'
     ];
 
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'int',
+        'name' => 'string',
+        'VAT' => 'int',
+        'unit' => 'string',
+        'description' => 'string',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
+    ];
+
     public function images()
     {
         return $this->hasMany(Image::class)->using(ProductImage::class);

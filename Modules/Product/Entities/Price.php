@@ -23,4 +23,18 @@ class Price extends Model
         'name',
         'amount'
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'int',
+        'product_id' => 'int',
+        'name' => 'string',
+        'amount' => 'float',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
+    ];
 }

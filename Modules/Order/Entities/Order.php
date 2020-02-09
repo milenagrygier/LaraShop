@@ -27,6 +27,21 @@ class Order extends Model
         'value',
     ];
 
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'int',
+        'client_id' => 'int',
+        'status_id' => 'int',
+        'number' => 'int',
+        'value' => 'float',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
+    ];
+
     public function status()
     {
         return $this->hasOne(Status::class);

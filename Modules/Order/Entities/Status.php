@@ -24,4 +24,16 @@ class Status extends Model
         'name'
     ];
 
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'int',
+        'name' => 'string',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
+    ];
+
 }

@@ -52,7 +52,14 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $casts = [
+        'id' => 'int',
+        'username' => 'string',
+        'email' => 'string',
+        'password' => 'string',
         'email_verified_at' => 'datetime',
+        'remember_token' => 'string',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     /**

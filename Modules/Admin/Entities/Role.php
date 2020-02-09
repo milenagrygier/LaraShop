@@ -25,4 +25,17 @@ class Role extends Model
         'name',
         'level'
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'int',
+        'name' => 'string',
+        'level' => 'int',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 }

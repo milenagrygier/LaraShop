@@ -17,4 +17,15 @@ class OrderPayment extends Pivot
         'payment_id',
         'order_id'
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'payment_id' => 'int',
+        'order_id' => 'int'
+    ];
+
 }

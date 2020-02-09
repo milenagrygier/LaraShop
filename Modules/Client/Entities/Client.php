@@ -15,6 +15,7 @@ use Carbon\Carbon;
  * @property string $email
  * @property string $first_name
  * @property string $last_name
+ * @property Carbon $email_verified_at
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
@@ -41,6 +42,14 @@ class Client extends Authenticatable
      * @var array
      */
     protected $casts = [
+        'id' => 'int',
+        'username' => 'string',
+        'password' => 'string',
+        'email' => 'string',
+        'first_name' => 'string',
+        'last_name' => 'string',
         'email_verified_at' => 'datetime',
+        'created_at'  => 'datetime',
+        'updated_at'  => 'datetime',
     ];
 }

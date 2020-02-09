@@ -16,4 +16,14 @@ class BasketProduct extends Pivot
         'client_id',
         'product_id'
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'client_id' => 'int',
+        'product_id' => 'int',
+    ];
 }

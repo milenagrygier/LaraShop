@@ -18,4 +18,16 @@ class Basket extends Model
     protected $fillable = [
         'client_id'
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'int',
+        'client_id' => 'int',
+        'updated_at' => 'datetime',
+        'created_at' => 'datetime'
+    ];
 }

@@ -48,4 +48,27 @@ class Log extends Model
         'message',
         'context',
     ];
+
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'int',
+        'instance' => 'string',
+        'channel' => 'string',
+        'file' => 'string',
+        'line' => 'int',
+        'exception_class' => 'string',
+        'ip' => 'string',
+        'user_agent' => 'string',
+        'level' => 'int',
+        'level_name' => 'string',
+        'message' => 'string',
+        'context' => 'string',
+        'created_at'  => 'datetime',
+        'updated_at'  => 'datetime',
+    ];
 }

@@ -26,4 +26,20 @@ class ClientAddress extends Model
         'zip_code',
         'country',
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'int',
+        'client_id' => 'int',
+        'street' => 'string',
+        'city' => 'string',
+        'zip_code' => 'string',
+        'country' => 'string',
+        'created_at'  => 'datetime',
+        'updated_at'  => 'datetime',
+    ];
 }
