@@ -6,13 +6,13 @@ namespace Modules\Product\Repositories\Interfaces;
 
 use Modules\Product\Entities\Product;
 use Illuminate\Database\Query\Builder;
-use Illuminate\Pagination\AbstractPaginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 interface ProductRepositoryInterface
 {
     public function find(int $id): ?Product;
 
-    public function paginated(int $per_page): AbstractPaginator;
+    public function paginated(int $per_page): LengthAwarePaginator;
 
     public function getDataTableBuilder(): Builder;
 

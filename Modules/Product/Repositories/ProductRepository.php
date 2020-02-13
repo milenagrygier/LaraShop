@@ -6,7 +6,7 @@ namespace Modules\Product\Repositories;
 
 use Modules\Product\Repositories\Interfaces\ProductRepositoryInterface;
 use Modules\Product\Entities\Product;
-use Illuminate\Pagination\AbstractPaginator;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Query\Builder;
 use DB;
 
@@ -14,10 +14,10 @@ class ProductRepository implements ProductRepositoryInterface
 {
     public function find(int $id): ?Product
     {
-        return Product::find($id);
+        return Product::where('id', $id)->first();
     }
 
-    public function paginated(int $per_page): AbstractPaginator
+    public function paginated(int $per_page): LengthAwarePaginator
     {
         return Product::paginate($per_page);
     }
