@@ -16,6 +16,6 @@ class ProductImageRepository implements ProductImageRepositoryInterface
 
     public function delete(int $id): bool
     {
-        return ProductImage::find($id)->delete();
+        return ProductImage::where('id', $id)->delete();
     }
 }
