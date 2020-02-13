@@ -6,7 +6,7 @@ namespace Modules\Product\Repositories\Interfaces;
 
 use Modules\Product\Entities\Product;
 use Illuminate\Database\Query\Builder;
-use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 interface ProductRepositoryInterface
 {

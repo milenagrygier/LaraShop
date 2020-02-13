@@ -37,11 +37,11 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function update(array $data, int $id): bool
     {
-        return $this->find($id)->update($data);
+        return Product::where('id', $id)->first()->update($data);
     }
 
     public function delete(int $id): bool
     {
-        return $this->find($id)->delete($id);
+        return Product::where('id', $id)->first()->delete();
     }
 }
