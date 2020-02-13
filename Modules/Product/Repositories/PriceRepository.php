@@ -11,7 +11,7 @@ class PriceRepository implements PriceRepositoryInterface
 {
     public function find(int $id): ?Price
     {
-        return Price::find($id);
+        return Price::where('id', $id)->first();
     }
 
     public function create(array $data): Price
