@@ -13,7 +13,6 @@ use Carbon\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-
 class Status extends Model
 {
     public $timestamps = false;

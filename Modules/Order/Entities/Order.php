@@ -17,7 +17,6 @@ use Carbon\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-
 class Order extends Model
 {
     protected $fillable = [
