@@ -22,7 +22,6 @@ use Modules\Order\Entities\Order;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-
 class Client extends Authenticatable
 {
     use Notifiable;
