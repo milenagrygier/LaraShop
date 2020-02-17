@@ -8,6 +8,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Carbon\Carbon;
 use Modules\Basket\Entities\Basket;
+use Modules\Client\Entities\Address;
+use Modules\Order\Entities\Order;
 
 /**
  * @property int $id
@@ -57,5 +59,10 @@ class Client extends Authenticatable
     public function basket()
     {
         return $this->hasOne(Basket::class);
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
     }
 }
