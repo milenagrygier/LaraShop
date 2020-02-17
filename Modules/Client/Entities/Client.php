@@ -7,6 +7,7 @@ namespace Modules\Client\Entities;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Carbon\Carbon;
+use Modules\Basket\Entities\Basket;
 
 /**
  * @property int $id
@@ -52,4 +53,9 @@ class Client extends Authenticatable
         'created_at'  => 'datetime',
         'updated_at'  => 'datetime',
     ];
+
+    public function basket()
+    {
+        return $this->hasOne(Basket::class);
+    }
 }

@@ -17,8 +17,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $updated_at
  */
 
-class ClientAddress extends Model
+class Address extends Model
 {
+    protected $table = 'addresses';
+
     protected $fillable = [
         'client_id',
         'street',
