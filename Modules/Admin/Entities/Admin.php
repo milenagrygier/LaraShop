@@ -9,6 +9,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Carbon\Carbon;
+use Modules\Admin\Entities\Role;
 
 /**
  * @property int $id
@@ -67,6 +68,6 @@ class Admin extends Authenticatable
      */
     public function roles()
     {
-        return $this->hasMany('Modules\Admin\Entities\Role')->using('Modules\Admin\Entities\Pivots\RoleUser');
+        return $this->belongsToMany(Role::class, 'role_admin');
     }
 }

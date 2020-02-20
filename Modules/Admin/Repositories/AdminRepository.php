@@ -29,4 +29,14 @@ class AdminRepository implements AdminRepositoryInterface
     {
         return Admin::select('id', 'email', 'username', 'email_verified_at', 'created_at', 'updated_at');
     }
+
+    public function attachRole(int $admin_id, int $role_id):? bool
+    {
+        return Admin::where('id', $admin_id)->first()->roles()->attach($role_id);
+    }
+
+    public function detachRole(int $admin_id, int $role_id):? int
+    {
+        return Admin::where('id', $admin_id)->first()->roles()->detach($role_id);
+    }
 }

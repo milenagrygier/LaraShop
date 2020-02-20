@@ -28,10 +28,5 @@ class AdminRepositoryServiceProvider extends ServiceProvider
             RoleRepositoryInterface::class,
             RoleRepository::class
         );
-
-        $this->app->bind(
-            RoleAdminRepositoryInterface::class,
-            RoleAdminRepository::class
-        );
     }
 }

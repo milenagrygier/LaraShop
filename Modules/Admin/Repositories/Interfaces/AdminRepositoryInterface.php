@@ -16,4 +16,8 @@ interface AdminRepositoryInterface
     public function delete(int $id): bool;
 
     public function getDataTableBuilder(): Builder;
+    
+    public function attachRole(int $admin_id, int $role_id):? bool;
+
+    public function detachRole(int $admin_id, int $role_id):? int;
 }
