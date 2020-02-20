@@ -12,4 +12,7 @@ interface BasketRepositoryInterface
 
     public function delete(int $id): bool;
 
+    public function attachProduct(int $basket_id, int $product_id):? bool;
+
+    public function detachProduct(int $basket_id, int $product_id):? int;
 }

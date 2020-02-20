@@ -16,6 +16,16 @@ class BasketRepository implements BasketRepositoryInterface
 
     public function delete(int $id): bool
     {
-        return Basket::find($id)->delete();
+        return Basket::where('id', $id)->first()->delete();
+    }
+
+    public function attachProduct(int $basket_id, int $product_id):? bool
+    {
+        return Basket::where('id', $basket_id)->first()->products()->attach($product_id);
+    }
+
+    public function detachProduct(int $basket_id, int $product_id):? int
+    {
+        return Basket::where('id', $basket_id)->first()->products()->detach($product_id);
     }
 }
