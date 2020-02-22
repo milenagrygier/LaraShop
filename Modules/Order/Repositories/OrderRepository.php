@@ -46,4 +46,14 @@ class OrderRepository implements OrderRepositoryInterface
     {
         return Order::where('id', $id)->delete();
     }
+
+    public function attachProduct(int $order_id, int $product_id):? bool
+    {
+        return Order::where('id', $order_id)->first()->products()->attach($product_id);
+    }
+
+    public function detachProduct(int $order_id, int $product_id):? int
+    {
+        return Order::where('id', $order_id)->first()->products()->detach($product_id);
+    }
 }

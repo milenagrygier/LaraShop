@@ -7,6 +7,7 @@ namespace Modules\Order\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Order\Entities\Status;
 use Carbon\Carbon;
+use Modules\Product\Entities\Product;
 
 /**
  * @property int $id
@@ -44,5 +45,10 @@ class Order extends Model
     public function status()
     {
         return $this->hasOne(Status::class);
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'order_product');
     }
 }
