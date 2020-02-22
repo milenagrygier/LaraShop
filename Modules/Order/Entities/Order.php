@@ -9,6 +9,7 @@ use Modules\Order\Entities\Status;
 use Carbon\Carbon;
 use Modules\Product\Entities\Product;
 use Modules\Product\Entities\Payment;
+use Modules\Product\Entities\Delivery;
 
 /**
  * @property int $id
@@ -56,5 +57,10 @@ class Order extends Model
     public function payments()
     {
         return $this->belongsToMany(Payment::class, 'order_payments');
+    }
+
+    public function deliveries()
+    {
+        return $this->belongsToMany(Delivery::class, 'order_delivery');
     }
 }
