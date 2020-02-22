@@ -17,7 +17,7 @@ interface PaymentRepositoryInterface
 
     public function delete(int $id): bool;
 
-    public function attachOrder(int $payment_id, $order_id):? bool;
+    public function attachOrder(int $payment_id, int $order_id):? bool;
 
-    public function detachOrder(int $payment_id, $order_id):? int;
+    public function detachOrder(int $payment_id, int $order_id):? int;
 }

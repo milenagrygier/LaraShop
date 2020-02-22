@@ -6,6 +6,7 @@ namespace Modules\Order\Repositories;
 
 use Modules\Order\Repositories\Interfaces\PaymentRepositoryInterface;
 use Modules\Order\Entities\Payment;
+use Illuminate\Database\Eloquent\Collection;
 
 class PaymentRepository implements PaymentRepositoryInterface
 {
@@ -29,12 +30,12 @@ class PaymentRepository implements PaymentRepositoryInterface
         return Payment::where('id', $id)->delete();
     }
 
-    public function attachOrder(int $payment_id, $order_id):? bool
+    public function attachOrder(int $payment_id, int $order_id):? bool
     {
         return Payment::where('id', $payment_id)->first()->orders()->attach($order_id);
     }
 
-    public function detachOrder(int $payment_id, $order_id):? int
+    public function detachOrder(int $payment_id, int $order_id):? int
     {
         return Payment::where('id', $payment_id)->first()->orders()->detach($order_id);
     }
