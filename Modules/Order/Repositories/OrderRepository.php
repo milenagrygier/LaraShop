@@ -8,7 +8,7 @@ use Modules\Order\Repositories\Interfaces\OrderRepositoryInterface;
 use Modules\Order\Entities\Order;
 use Illuminate\Support\Collection;
 use DB;
-use Illuminate\Database\Schema\Builder;
+use Illuminate\Database\Query\Builder;
 
 class OrderRepository implements OrderRepositoryInterface
 {

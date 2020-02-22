@@ -6,7 +6,7 @@ namespace Modules\Order\Repositories\Interfaces;
 
 use Modules\Order\Entities\Order;
 use Illuminate\Support\Collection;
-use Illuminate\Database\Schema\Builder;
+use Illuminate\Database\Query\Builder;
 
 interface OrderRepositoryInterface
 {
