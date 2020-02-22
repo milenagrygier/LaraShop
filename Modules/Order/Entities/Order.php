@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Order\Entities\Status;
 use Carbon\Carbon;
 use Modules\Product\Entities\Product;
+use Modules\Product\Entities\Payment;
 
 /**
  * @property int $id
@@ -50,5 +51,10 @@ class Order extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class, 'order_product');
+    }
+
+    public function payments()
+    {
+        return $this->belongsToMany(Payment::class, 'order_payments');
     }
 }
