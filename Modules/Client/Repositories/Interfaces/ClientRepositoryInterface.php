@@ -18,4 +18,8 @@ interface ClientRepositoryInterface
     public function update(array $data, int $id): bool;
 
     public function delete(int $id): bool;
+
+    public function attachContact(int $client_id, int $contact_id):? bool;
+
+    public function detachContact(int $client_id, int $contact_id):? int;
 }

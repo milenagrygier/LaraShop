@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1)
+declare(strict_types=1);
 
 namespace Modules\Client\Repositories;
 
@@ -27,11 +27,21 @@ class ClientRepository implements ClientRepositoryInterface
 
     public function update(array $data, int $id): bool
     {
-        return $this->find($id)->update($data);
+        return Client::where('id', $id)->first()->update($data);
     }
 
     public function delete(int $id): bool
     {
-        return $this->find($id)->delete();
+        return Client::where('id', $id)->first()->delete();
+    }
+
+    public function attachContact(int $client_id, int $contact_id):? bool
+    {
+        return Client::where('id', $client_id)->first()->contact_forms()->attach($contact_id);
+    }
+
+    public function detachContact(int $client_id, int $contact_id):? int
+    {
+        return Client::where('id', $client_id)->first()->contact_forms()->detach($contact_id);
     }
 }
