@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Modules\Basket\Entities\Basket;
 use Modules\Client\Entities\Address;
 use Modules\Order\Entities\Order;
+use Modules\Contact\Entities\ContactForm;
 
 /**
  * @property int $id
@@ -68,5 +69,10 @@ class Client extends Authenticatable
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function contact_forms()
+    {
+        return $this->belongsTo(ContactForm::class, 'contact_client');
     }
 }
