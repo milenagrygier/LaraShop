@@ -44,4 +44,14 @@ class ProductRepository implements ProductRepositoryInterface
     {
         return Product::where('id', $id)->first()->delete();
     }
+
+    public function attachImage(int $product_id, int $image_id):? bool
+    {
+        return Product::where('id', $product_id)->first()->images()->attach($image_id);
+    }
+
+    public function detachImage(int $product_id, int $image_id):? int
+    {
+        return Product::where('id', $product_id)->first()->images()->detach($image_id);
+    }
 }

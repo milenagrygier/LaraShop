@@ -21,4 +21,8 @@ interface ProductRepositoryInterface
     public function update(array $data, int $id): bool;
 
     public function delete(int $id): bool;
+
+    public function attachImage(int $product_id, int $image_id):? bool;
+
+    public function detachImage(int $product_id, int $image_id):? int;
 }
