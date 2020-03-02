@@ -16,7 +16,7 @@ use Modules\Product\Entities\Delivery;
  * @property int $client_id
  * @property int $status_id
  * @property int $number
- * @property float $value
+ * @property int $value
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
@@ -39,7 +39,7 @@ class Order extends Model
         'client_id' => 'int',
         'status_id' => 'int',
         'number' => 'int',
-        'value' => 'float',
+        'value' => 'int',
         'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
