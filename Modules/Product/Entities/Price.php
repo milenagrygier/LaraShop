@@ -11,7 +11,7 @@ use Carbon\Carbon;
  * @property int $id
  * @property int $product_id
  * @property string $name
- * @property float $amount
+ * @property int $amount
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
@@ -33,7 +33,7 @@ class Price extends Model
         'id' => 'int',
         'product_id' => 'int',
         'name' => 'string',
-        'amount' => 'float',
+        'amount' => 'int',
         'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
