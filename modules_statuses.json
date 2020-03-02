@@ -6,5 +6,6 @@
     "Product": true,
     "Image": true,
     "Order": true,
-    "Producer": true
+    "Producer": true,
+    "Promotion": true
 }
