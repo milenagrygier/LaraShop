@@ -5,5 +5,7 @@
     "Basket": true,
     "Product": true,
     "Image": true,
-    "Order": true
+    "Order": true,
+    "Producer": true,
+    "Promotion": true
 }
