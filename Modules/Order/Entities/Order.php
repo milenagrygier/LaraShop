@@ -7,17 +7,19 @@ namespace Modules\Order\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Order\Entities\Status;
 use Carbon\Carbon;
+use Modules\Product\Entities\Product;
+use Modules\Product\Entities\Payment;
+use Modules\Product\Entities\Delivery;
 
 /**
  * @property int $id
  * @property int $client_id
  * @property int $status_id
  * @property int $number
- * @property float $value
+ * @property int $value
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-
 class Order extends Model
 {
     protected $fillable = [
@@ -37,7 +39,7 @@ class Order extends Model
         'client_id' => 'int',
         'status_id' => 'int',
         'number' => 'int',
-        'value' => 'float',
+        'value' => 'int',
         'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
@@ -45,5 +47,20 @@ class Order extends Model
     public function status()
     {
         return $this->hasOne(Status::class);
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'order_product');
+    }
+
+    public function payments()
+    {
+        return $this->belongsToMany(Payment::class, 'order_payments');
+    }
+
+    public function deliveries()
+    {
+        return $this->belongsToMany(Delivery::class, 'order_delivery');
     }
 }

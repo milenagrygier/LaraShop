@@ -10,29 +10,25 @@ use Carbon\Carbon;
 /**
  * @property int $id
  * @property string $name
+ * @property int $delivery_in_days
+ * @property float $cost
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-class Status extends Model
+class Delivery extends Model
 {
-    public $timestamps = false;
-
-    protected $table = 'statuses';
-
     protected $fillable = [
-        'name'
+        'name',
+        'delivery_in_days',
+        'cost',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'id' => 'int',
         'name' => 'string',
+        'delivery_in_days' => 'int',
+        'cost' => 'float',
         'created_at' => 'datetime',
-        'updated_at' => 'datetime'
+        'updated_at' => 'datetime',
     ];
-
 }

@@ -8,7 +8,7 @@ use Modules\Order\Repositories\Interfaces\OrderRepositoryInterface;
 use Modules\Order\Entities\Order;
 use Illuminate\Support\Collection;
 use DB;
-use Illuminate\Database\Schema\Builder;
+use Illuminate\Database\Query\Builder;
 
 class OrderRepository implements OrderRepositoryInterface
 {
@@ -45,5 +45,15 @@ class OrderRepository implements OrderRepositoryInterface
     public function delete(int $id): bool
     {
         return Order::where('id', $id)->delete();
+    }
+
+    public function attachProduct(int $order_id, int $product_id):? bool
+    {
+        return Order::where('id', $order_id)->first()->products()->attach($product_id);
+    }
+
+    public function detachProduct(int $order_id, int $product_id):? int
+    {
+        return Order::where('id', $order_id)->first()->products()->detach($product_id);
     }
 }

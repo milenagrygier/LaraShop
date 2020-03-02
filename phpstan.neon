@@ -14,9 +14,10 @@ parameters:
     level: 7
 
     ignoreErrors:
-        
+
 
     excludes_analyse:
         - ./*/*/FileToBeExcluded.php
 
-    polluteCatchScopeWithTryAssignments: true     
+    polluteCatchScopeWithTryAssignments: true
+    checkMissingIterableValueType: false
