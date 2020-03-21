@@ -11,6 +11,7 @@ use Modules\Basket\Entities\Basket;
 use Modules\Client\Entities\Address;
 use Modules\Order\Entities\Order;
 use Modules\Contact\Entities\ContactForm;
+use Modules\Document\Entities\Document;
 
 /**
  * @property int $id
@@ -69,6 +70,11 @@ class Client extends Authenticatable
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function documents()
+    {
+        return $this->hasMany(Document::class, 'client_document');
     }
 
     public function contact_forms()
