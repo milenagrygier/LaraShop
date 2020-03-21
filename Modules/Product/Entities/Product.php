@@ -47,7 +47,7 @@ class Product extends Model
 
     public function images()
     {
-        return $this->hasMany(Image::class)->using(ProductImage::class);
+        return $this->belongsTo(Image::class, 'product_image');
     }
 
     public function prices()

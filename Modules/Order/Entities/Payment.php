@@ -6,6 +6,7 @@ namespace Modules\Order\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Modules\Order\Entities\Order;
 
 /**
  * @property int $id
@@ -13,7 +14,6 @@ use Carbon\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-
 class Payment extends Model
 {
     protected $fillable = [
@@ -31,4 +31,9 @@ class Payment extends Model
         'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class, 'order_payment');
+    }
 }

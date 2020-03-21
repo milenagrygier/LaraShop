@@ -1,0 +1,13 @@
+{
+    "name": "Producer",
+    "alias": "producer",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Producer\\Providers\\ProducerServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

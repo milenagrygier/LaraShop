@@ -6,7 +6,7 @@ namespace Modules\Order\Repositories\Interfaces;
 
 use Modules\Order\Entities\Order;
 use Illuminate\Support\Collection;
-use Illuminate\Database\Schema\Builder;
+use Illuminate\Database\Query\Builder;
 
 interface OrderRepositoryInterface
 {
@@ -21,4 +21,8 @@ interface OrderRepositoryInterface
     public function update(array $data, int $id): bool;
 
     public function delete(int $id): bool;
+
+    public function attachProduct(int $order_id, int $product_id):? bool;
+
+    public function detachProduct(int $order_id, int $product_id):? int;
 }

@@ -6,7 +6,7 @@ namespace Modules\Product\Repositories;
 
 use Modules\Product\Repositories\Interfaces\ProductRepositoryInterface;
 use Modules\Product\Entities\Product;
-use Illuminate\Pagination\AbstractPaginator;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Query\Builder;
 use DB;
 
@@ -14,10 +14,10 @@ class ProductRepository implements ProductRepositoryInterface
 {
     public function find(int $id): ?Product
     {
-        return Product::find($id);
+        return Product::where('id', $id)->first();
     }
 
-    public function paginated(int $per_page): AbstractPaginator
+    public function paginated(int $per_page): LengthAwarePaginator
     {
         return Product::paginate($per_page);
     }
@@ -37,11 +37,21 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function update(array $data, int $id): bool
     {
-        return $this->find($id)->update($data);
+        return Product::where('id', $id)->first()->update($data);
     }
 
     public function delete(int $id): bool
     {
-        return $this->find($id)->delete($id);
+        return Product::where('id', $id)->first()->delete();
+    }
+
+    public function attachImage(int $product_id, int $image_id):? bool
+    {
+        return Product::where('id', $product_id)->first()->images()->attach($image_id);
+    }
+
+    public function detachImage(int $product_id, int $image_id):? int
+    {
+        return Product::where('id', $product_id)->first()->images()->detach($image_id);
     }
 }

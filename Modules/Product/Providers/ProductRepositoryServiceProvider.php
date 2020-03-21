@@ -28,11 +28,6 @@ class ProductRepositoryServiceProvider extends ServiceProvider
             PriceRepositoryInterface::class,
             PriceRepository::class
         );
-
-        $this->app->bind(
-            ProductImageRepositoryInterface::class,
-            ProductImageRepository::class
-        );
     }
 
 }
